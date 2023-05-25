@@ -15,7 +15,6 @@ basic.forever(function () {
             . . # . .
             `)
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 45)
-        strip = neopixel.create(DigitalPin.P0, 27, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Purple))
     }
     if (ir_waarde == rechts) {
@@ -27,7 +26,6 @@ basic.forever(function () {
             . . # . .
             `)
         maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 45)
-        strip = neopixel.create(DigitalPin.P0, 25, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Blue))
     }
     if (ir_waarde == links) {
@@ -39,7 +37,6 @@ basic.forever(function () {
             . . # . .
             `)
         maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 45)
-        strip = neopixel.create(DigitalPin.P0, 11, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Indigo))
     }
     if (ir_waarde == achteruit) {
@@ -51,7 +48,6 @@ basic.forever(function () {
             . . # . .
             `)
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 45)
-        strip = neopixel.create(DigitalPin.P0, 4, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Orange))
     }
     if (ir_waarde == stop) {
@@ -63,10 +59,10 @@ basic.forever(function () {
             . . . . .
             `)
         maqueen.motorStop(maqueen.Motors.All)
-        strip = neopixel.create(DigitalPin.P0, 94, NeoPixelMode.RGB)
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
     }
 })
 basic.forever(function () {
     ir_waarde = IR.IR_read()
+    strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
 })
